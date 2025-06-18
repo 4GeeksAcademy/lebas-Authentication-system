@@ -1,10 +1,11 @@
 import React, { useEffect } from "react"
-import rigoImageUrl from "../assets/img/rigo-baby.jpg";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Home = () => {
 
 	const { store, dispatch } = useGlobalReducer()
+	const navigate = useNavigate();
 
 	const loadMessage = async () => {
 		try {
@@ -34,19 +35,15 @@ export const Home = () => {
 
 	return (
 		<div className="text-center mt-5">
-			<h1 className="display-4">Hello Rigo!!</h1>
-			<p className="lead">
-				<img src={rigoImageUrl} className="img-fluid rounded-circle mb-3" alt="Rigo Baby" />
-			</p>
-			<div className="alert alert-info">
-				{store.message ? (
-					<span>{store.message}</span>
-				) : (
-					<span className="text-danger">
-						Loading message from the backend (make sure your python 🐍 backend is running)...
-					</span>
-				)}
+			<h1>Welcome !</h1>
+			<div className="d-flex justify-content-center mt-5">
+				<Link to="/login">
+				<button className="btn btn-primary me-5" >Login</button>
+				</Link>
+				<Link to="/signup">
+				<button className="btn btn-primary" >Register</button>
+				</Link>
 			</div>
-		</div>
+		</div>	
 	);
 }; 
