@@ -49,7 +49,7 @@ export const Private = () => {
         <div className="float-start ms-5"><img src={userData?.avatar} alt="" /></div>
         <div className="float-end me-5 mt-3">
           <p>Your name: {userData?.lastname}</p>
-          <p>Your email:{userData?.email}</p>
+          <p>Your email: {userData?.email}</p>
         </div>
       </div>
     </div>
